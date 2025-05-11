@@ -1,0 +1,8 @@
+.patient-detail-container {
+  padding: 1rem;
+  gap: 1rem;
+}
+
+:host ::ng-deep .p-panel {
+  margin-bottom: 1rem;
+}

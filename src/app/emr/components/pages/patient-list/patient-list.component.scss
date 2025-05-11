@@ -1,0 +1,27 @@
+.patients-container {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  .patient-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .patient-btn {
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #005f99;
+      }
+    }
+  }
+}

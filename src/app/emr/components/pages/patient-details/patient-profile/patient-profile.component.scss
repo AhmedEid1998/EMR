@@ -1,0 +1,25 @@
+.profile-card {
+  margin-bottom: 20px;
+}
+
+:host ::ng-deep .p-card {
+  padding: 10px;
+}
+
+/* Avatar styling (if you uncomment it in HTML) */
+/*
+  .profile-avatar {
+    background-color: #3f51b5; // Example Material primary color
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 40px; // Ensure this matches mat-card-avatar size if used
+    height: 40px;
+    border-radius: 50%;
+  }
+  */
+
+/* Add more specific styles as needed */

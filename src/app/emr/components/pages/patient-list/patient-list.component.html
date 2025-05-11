@@ -1,0 +1,13 @@
+<div class="patients-container">
+  <h2>Patient</h2>
+
+  <div class="patient-list">
+    <button
+      class="patient-btn"
+      *ngFor="let patient of patients"
+      (click)="openPatient(patient)"
+    >
+      {{ patient.fullName }}
+    </button>
+  </div>
+</div>

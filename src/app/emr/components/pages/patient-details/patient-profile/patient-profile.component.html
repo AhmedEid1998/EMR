@@ -1,0 +1,42 @@
+<div *ngIf="patient" class="profile-card">
+  <p-card>
+    <ng-template pTemplate="header">
+      <!-- Avatar can be implemented separately with p-avatar if needed -->
+      <div class="profile-header">
+        <div class="profile-title">{{ patient.fullName || "N/A" }}</div>
+        <div class="profile-subtitle">
+          {{ patient.email || "No email provided" }}
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="content">
+      <p>
+        <strong>Date of Birth:</strong>
+        {{
+          patient.birthDate ? (patient.birthDate | date : "longDate") : "N/A"
+        }}
+      </p>
+      <p>
+        <strong>Age:</strong>
+        {{ patient.birthDate ? getAge(patient.birthDate) : "N/A" }}
+      </p>
+      <!-- Add more profile fields as needed -->
+      <!-- Example:
+        <p><strong>Phone:</strong> {{ patient.phoneNumber || 'N/A' }}</p>
+        <p><strong>Address:</strong> {{ patient.address || 'N/A' }}</p>
+        <p><strong>Gender:</strong> {{ patient.gender || 'N/A' }}</p>
+        -->
+    </ng-template>
+
+    <!-- Uncomment if actions are needed
+      <ng-template pTemplate="footer">
+        <button pButton type="button" label="Edit Profile"></button>
+      </ng-template>
+      -->
+  </p-card>
+</div>
+
+<div *ngIf="!patient">
+  <p>Patient profile data is not available.</p>
+</div>

@@ -1,0 +1,16 @@
+<div class="top-tabs">
+  <!-- Static Tabs -->
+  <ng-container *ngFor="let tab of staticTabs">
+    <button class="tab-btn" (click)="navigateTo(tab.route)">
+      {{ tab.label }}
+    </button>
+  </ng-container>
+
+  <!-- Dynamic Patient Tabs -->
+  <ng-container *ngFor="let tab of tabService.patientTabs">
+    <button class="tab-btn" (click)="navigateTo('/emr/patient/' + tab.id)">
+      {{ tab.name }}
+      <span class="close-btn" (click)="closePatientTab(tab.id, $event)">×</span>
+    </button>
+  </ng-container>
+</div>
