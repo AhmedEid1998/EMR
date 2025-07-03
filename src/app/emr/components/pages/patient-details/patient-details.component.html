@@ -15,8 +15,13 @@
 
   <!-- Right section: 9 cols -->
   <div style="flex: 1;">
+    <ng-container *ngIf="patient$ | async as patient">
+      <h2>{{ patient.name }}</h2>
+      <p>ID: {{ patient.id }}</p>
+      <p>Other details here...</p>
+    </ng-container>
       <!-- custom layout component to be used here -->
-    <ng-template #dynamicComponentContainer></ng-template>
+    <!-- <ng-template #dynamicComponentContainer></ng-template> -->
     <!-- <p-panel header="Additional Data">
       <app-custom-layout
         [layout]="layout"

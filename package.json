@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@katoid/angular-grid-layout": "^3.0.2",
+    "@ngxs/store": "^18.1.6",
     "grid-layout-lib": "file:../grid-layout/dist/grid-layout-lib",
     "primeicons": "^7.0.0",
     "primeng": "^17.18.1",

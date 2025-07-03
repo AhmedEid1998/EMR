@@ -4,7 +4,7 @@ import { PatientListComponent } from './components/pages/patient-list/patient-li
 import { PatientDetailsComponent } from './components/pages/patient-details/patient-details.component';
 import { EmrLayoutComponent } from './components/layout/emr-layout/emr-layout.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: EmrLayoutComponent,

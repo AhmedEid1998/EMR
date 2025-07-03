@@ -1,6 +1,7 @@
 export interface Patient {
   id: string;
   fullName: string;
+  name?: string;
   email?: string;
   dob?: string;
   birthDate?: string; // ISO string format (e.g., "1990-05-15T00:00:00.000Z")

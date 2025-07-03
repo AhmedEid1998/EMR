@@ -6,9 +6,12 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { GridOneComponent } from './grid-one/grid-one.component';
 import { CustomLayoutComponent } from 'grid-layout-lib';
+import { Store } from '@ngxs/store';
+import { LoadPatientById, PatientState } from '../../../state/patient.state';
+import { Patient } from '../../../models/patient';
 
 @Component({
   selector: 'app-patient-details',
@@ -20,11 +23,14 @@ export class PatientDetailsComponent implements AfterViewInit {
   container!: ViewContainerRef;
 
   private destroy$ = new Subject<void>();
-  patientId: string | null = null;
+  // patientId: string | null = null;
+  patientId = this._activatedRoute.snapshot.paramMap.get('id')!;
+  patient$: Observable<Patient | null> = this.store.select(PatientState.getSelectedPatient);
 
-  constructor(private _activatedRoute: ActivatedRoute) {}
+  constructor(private _activatedRoute: ActivatedRoute, private store: Store) {}
 
   ngOnInit() {
+    this.store.dispatch(new LoadPatientById(this.patientId));
     this._activatedRoute.params
       .pipe(takeUntil(this.destroy$))
       .subscribe((params) => {
@@ -49,11 +55,11 @@ export class PatientDetailsComponent implements AfterViewInit {
     componentRef.instance.rowHeight = this.rowHeight;
     componentRef.instance.gap = this.gap;
     componentRef.instance.compactType = this.compactType;
-    componentRef.instance.disableRemove = this.disableRemove;
-    componentRef.instance.disableDrag = this.disableDrag;
-    componentRef.instance.disableResize = this.disableResize;
+    // componentRef.instance.disableRemove = this.disableRemove;
+    // componentRef.instance.disableDrag = this.disableDrag;
+    // componentRef.instance.disableResize = this.disableResize;
     componentRef.instance.componentMap = this.componentMap;
-    componentRef.instance.backgroundConfig = this.backgroundConfig;
+    // componentRef.instance.backgroundConfig = this.backgroundConfig;
   }
 
   ngOnDestroy() {

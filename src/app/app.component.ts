@@ -38,6 +38,14 @@ export class AppComponent {
 //         └── models/
 //             └── patient.model.ts
 
+
+
+
+
+
+
+
+
 // emr/
 // ├── emr.module.ts
 // ├── emr-routing.module.ts
@@ -58,3 +66,42 @@ export class AppComponent {
 // │   └── patient.model.ts
 // ├── services/
 // │   └── tab.service.ts
+
+
+
+
+
+// src/
+// └── app/
+//     ├── core/                       # Core services, guards, interceptors
+//     │   ├── auth/
+//     │   │   ├── auth.service.ts
+//     │   │   ├── auth.guard.ts
+//     │   │   ├── auth.routes.ts
+//     │   ├── services/
+//     │   │   ├── notification.service.ts
+//     │   ├── interceptors/
+//     │   │   ├── api.interceptor.ts
+//     ├── features/                   # Feature-specific modules (e.g., product, cart)
+//     │   ├── product/
+//     │   │   ├── pages/           # Routed components
+//     │   │   │   ├── product-list/
+//     │   │   │   │   ├── product-list.component.ts
+//     │   │   │   ├── product-detail/
+//     │   │   ├── components/      # Feature-specific reusable components
+//     │   │   │   ├── product-card.component.ts
+//     │   │   ├── services/
+//     │   │   │   ├── product.service.ts
+//     │   │   ├── product.routes.ts
+//     ├── shared/                     # Reusable "dumb" components, pipes, utilities
+//     │   ├── components/
+//     │   │   ├── notification.component.ts
+//     │   ├── pipes/
+//     │   │   ├── date.pipe.ts
+//     │   ├── utils/
+//     │   │   ├── array.utils.ts
+//     ├── layout/                     # Layout components (e.g., header, footer)
+//     │   ├── layout.component.ts
+//     ├── app.component.ts            # Root component
+//     ├── app.routes.ts              # Root routing configuration
+//     ├── app.config.ts              # Application-wide providers

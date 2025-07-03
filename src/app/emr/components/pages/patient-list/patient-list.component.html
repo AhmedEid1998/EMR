@@ -11,3 +11,8 @@
     </button>
   </div>
 </div>
+
+<h2>Patients</h2>
+<button *ngFor="let patient of patients$ | async" (click)="goToDetails(patient.id)">
+  {{ patient.name }}
+</button>
